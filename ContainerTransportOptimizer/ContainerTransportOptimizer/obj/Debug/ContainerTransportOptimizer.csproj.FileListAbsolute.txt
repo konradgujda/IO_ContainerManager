@@ -1,0 +1,19 @@
+C:\Users\Konrad Gujda\Desktop\CPS\ContainerTransportOptimizer\ContainerTransportOptimizer\bin\Debug\ContainerTransportOptimizer.exe.config
+C:\Users\Konrad Gujda\Desktop\CPS\ContainerTransportOptimizer\ContainerTransportOptimizer\bin\Debug\ContainerTransportOptimizer.exe
+C:\Users\Konrad Gujda\Desktop\CPS\ContainerTransportOptimizer\ContainerTransportOptimizer\bin\Debug\ContainerTransportOptimizer.pdb
+C:\Users\Konrad Gujda\Desktop\CPS\ContainerTransportOptimizer\ContainerTransportOptimizer\obj\Debug\ContainerTransportOptimizer.Properties.Resources.resources
+C:\Users\Konrad Gujda\Desktop\CPS\ContainerTransportOptimizer\ContainerTransportOptimizer\obj\Debug\ContainerTransportOptimizer.csproj.GenerateResource.Cache
+C:\Users\Konrad Gujda\Desktop\CPS\ContainerTransportOptimizer\ContainerTransportOptimizer\obj\Debug\ContainerTransportOptimizer.exe
+C:\Users\Konrad Gujda\Desktop\CPS\ContainerTransportOptimizer\ContainerTransportOptimizer\obj\Debug\ContainerTransportOptimizer.pdb
+C:\Users\Konrad Gujda\Desktop\CPS\ContainerTransportOptimizer\ContainerTransportOptimizer\obj\Debug\ContainerTransportOptimizer.MainWindow.resources
+C:\Users\conra\Desktop\ContainerTransportOptimizer\ContainerTransportOptimizer\bin\Debug\ContainerTransportOptimizer.exe.config
+C:\Users\conra\Desktop\ContainerTransportOptimizer\ContainerTransportOptimizer\bin\Debug\ContainerTransportOptimizer.exe
+C:\Users\conra\Desktop\ContainerTransportOptimizer\ContainerTransportOptimizer\bin\Debug\ContainerTransportOptimizer.pdb
+C:\Users\conra\Desktop\ContainerTransportOptimizer\ContainerTransportOptimizer\obj\Debug\ContainerTransportOptimizer.MainWindow.resources
+C:\Users\conra\Desktop\ContainerTransportOptimizer\ContainerTransportOptimizer\obj\Debug\ContainerTransportOptimizer.Properties.Resources.resources
+C:\Users\conra\Desktop\ContainerTransportOptimizer\ContainerTransportOptimizer\obj\Debug\ContainerTransportOptimizer.csproj.GenerateResource.cache
+C:\Users\conra\Desktop\ContainerTransportOptimizer\ContainerTransportOptimizer\obj\Debug\ContainerTransportOptimizer.csproj.CoreCompileInputs.cache
+C:\Users\conra\Desktop\ContainerTransportOptimizer\ContainerTransportOptimizer\obj\Debug\ContainerTransportOptimizer.exe
+C:\Users\conra\Desktop\ContainerTransportOptimizer\ContainerTransportOptimizer\obj\Debug\ContainerTransportOptimizer.pdb
+C:\Users\Konrad Gujda\Desktop\CPS\ContainerTransportOptimizer\ContainerTransportOptimizer\obj\Debug\ContainerTransportOptimizer.csprojAssemblyReference.cache
+C:\Users\Konrad Gujda\Desktop\CPS\ContainerTransportOptimizer\ContainerTransportOptimizer\obj\Debug\ContainerTransportOptimizer.csproj.CoreCompileInputs.cache
