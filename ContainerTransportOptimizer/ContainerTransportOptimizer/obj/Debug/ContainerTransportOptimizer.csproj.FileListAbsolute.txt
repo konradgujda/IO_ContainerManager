@@ -17,3 +17,13 @@ C:\Users\conra\Desktop\ContainerTransportOptimizer\ContainerTransportOptimizer\o
 C:\Users\conra\Desktop\ContainerTransportOptimizer\ContainerTransportOptimizer\obj\Debug\ContainerTransportOptimizer.pdb
 C:\Users\Konrad Gujda\Desktop\CPS\ContainerTransportOptimizer\ContainerTransportOptimizer\obj\Debug\ContainerTransportOptimizer.csprojAssemblyReference.cache
 C:\Users\Konrad Gujda\Desktop\CPS\ContainerTransportOptimizer\ContainerTransportOptimizer\obj\Debug\ContainerTransportOptimizer.csproj.CoreCompileInputs.cache
+\\DESKTOP-JLV4NBA\cps\ContainerTransportOptimizer\ContainerTransportOptimizer\bin\Debug\ContainerTransportOptimizer.exe.config
+\\DESKTOP-JLV4NBA\cps\ContainerTransportOptimizer\ContainerTransportOptimizer\bin\Debug\ContainerTransportOptimizer.exe
+\\DESKTOP-JLV4NBA\cps\ContainerTransportOptimizer\ContainerTransportOptimizer\bin\Debug\ContainerTransportOptimizer.pdb
+\\DESKTOP-JLV4NBA\cps\ContainerTransportOptimizer\ContainerTransportOptimizer\obj\Debug\ContainerTransportOptimizer.csprojAssemblyReference.cache
+\\DESKTOP-JLV4NBA\cps\ContainerTransportOptimizer\ContainerTransportOptimizer\obj\Debug\ContainerTransportOptimizer.MainWindow.resources
+\\DESKTOP-JLV4NBA\cps\ContainerTransportOptimizer\ContainerTransportOptimizer\obj\Debug\ContainerTransportOptimizer.Properties.Resources.resources
+\\DESKTOP-JLV4NBA\cps\ContainerTransportOptimizer\ContainerTransportOptimizer\obj\Debug\ContainerTransportOptimizer.csproj.GenerateResource.cache
+\\DESKTOP-JLV4NBA\cps\ContainerTransportOptimizer\ContainerTransportOptimizer\obj\Debug\ContainerTransportOptimizer.csproj.CoreCompileInputs.cache
+\\DESKTOP-JLV4NBA\cps\ContainerTransportOptimizer\ContainerTransportOptimizer\obj\Debug\ContainerTransportOptimizer.exe
+\\DESKTOP-JLV4NBA\cps\ContainerTransportOptimizer\ContainerTransportOptimizer\obj\Debug\ContainerTransportOptimizer.pdb

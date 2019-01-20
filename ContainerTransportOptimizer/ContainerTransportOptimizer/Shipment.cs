@@ -12,7 +12,11 @@ namespace ContainerTransportOptimizer
         private bool[,,] freeSpace;
         private int noLevels = 0;
         private Ship ship;
-
+        /// <summary>
+        /// Initializes shipment - sets number of levels, clears space on the ship.
+        /// </summary>
+        /// <param name="shipId">For which ship the shipment will be considered.</param>
+        /// <param name="containerHeight">Constant value of height of containers in this shipment.</param>
         public Shipment(int shipId, int containerHeight)
         {
             containerLocationsList = new List<ContainerLocation>();
@@ -21,7 +25,9 @@ namespace ContainerTransportOptimizer
             noLevels = ship.height / containerHeight;
             ClearSpace();
         }
-
+        /// <summary>
+        /// Sets space on all ship levels to "free".
+        /// </summary>
         private void ClearSpace()
         {
             int x = ship.width;
@@ -38,7 +44,15 @@ namespace ContainerTransportOptimizer
                 }
             }
         }
-        
+        /// <summary>
+        /// Searches for empty space on ship to put a container there.
+        /// </summary>
+        /// <param name="container">Container to be places on ship.</param>
+        /// <param name="xPosition">X position where the container should be placed.</param>
+        /// <param name="yPosition">Y position where the container should be placed.</param>
+        /// <param name="orientation">Determines if the container should be placed rotated or not.</param>
+        /// <param name="level">Ship level on which the container should be placed.</param>
+        /// <returns>Return true if the container has been placed - false otherwise.</returns>
         private bool PutContainerOnShip(Container container, int xPosition, int yPosition, bool orientation, int level)
         {
             int containerXSize, containerYSize;
@@ -79,7 +93,12 @@ namespace ContainerTransportOptimizer
             containerLocationsList.Add(containerLocation);
             return true;
         }
-
+        /// <summary>
+        /// Chooses the biggest containers and tries to put them on the ship first.
+        /// </summary>
+        /// <param name="containersList">List of all containers to be placed on ship.</param>
+        /// <param name="level">Level to be filled.</param>
+        /// <returns>List of containers that haven't been placed.</returns>
         private List<Container> FillShipLevel(List<Container> containersList, int level)
         {
             containersList = containersList.OrderByDescending(o => o.timestamp).ThenBy(o => (o.width * o.length)).ToList();
@@ -89,7 +108,12 @@ namespace ContainerTransportOptimizer
             }
             return containersList;
         }
-
+        /// <summary>
+        /// Tries to put containers on ship in a random manner.
+        /// </summary>
+        /// <param name="containersList">List of all containers to be placed on ship.</param>
+        /// <param name="level">Level to be filled.</param>
+        /// <returns>List of containers that haven't been placed.</returns>
         private List<Container> FillShipLevel2(List<Container> containersList, int level)
         {
             containersList = containersList.OrderByDescending(o => o.timestamp).ThenByDescending(o => o.id).ToList();
@@ -99,7 +123,12 @@ namespace ContainerTransportOptimizer
             }
             return containersList;
         }
-
+        /// <summary>
+        /// Tries to put container on ship level differing the location and orientation.
+        /// </summary>
+        /// <param name="container">Container to be placed.</param>
+        /// <param name="level">Level of the ship.</param>
+        /// <returns>True if the container has been placed somewhere on the ship - false otherwise.</returns>
         private bool TryToPutContainerOnShip(Container container, int level)
         {
             for (int j = 0; j < ship.width; j++)
@@ -112,7 +141,12 @@ namespace ContainerTransportOptimizer
             }
             return false;
         }
-
+        /// <summary>
+        /// Fills all the ship levels with containers.
+        /// </summary>
+        /// <param name="containersList">List of containers to be placed on ship.</param>
+        /// <param name="algorithm">Which algorithm will be used for optimization.</param>
+        /// <returns>List of containers that haven't been placed in this shipment.</returns>
         public List<Container> FillTheShip(List<Container> containersList, int algorithm)
         {
             switch (algorithm)
@@ -132,7 +166,11 @@ namespace ContainerTransportOptimizer
             }
             return containersList;
         }
-
+        /// <summary>
+        /// Gets the map of free space for the level of ship.
+        /// </summary>
+        /// <param name="level">Ship level.</param>
+        /// <returns>Array representing free space on ship level.</returns>
         public bool[,] GetSpaceArrayForLevel(int level)
         {
             bool[,] tempArray = new bool[ship.width, ship.length];
@@ -145,17 +183,26 @@ namespace ContainerTransportOptimizer
             }
             return tempArray;
         }
-
+        /// <summary>
+        /// Gets the exact locations of all containers consisted in this shipment.
+        /// </summary>
+        /// <returns>List of containers locations in this shipment.</returns>
         public List<ContainerLocation> GetContainerLocations()
         {
             return containerLocationsList;
         }
-
+        /// <summary>
+        /// Gets number of levels for constant container height for the ship used in this shipment.
+        /// </summary>
+        /// <returns>Number of levels.</returns>
         public int GetNoLevels()
         {
             return noLevels;
         }
-
+        /// <summary>
+        /// Gets the ship used in this particular shipment.
+        /// </summary>
+        /// <returns>Ship.</returns>
         public Ship GetShip()
         {
             return ship;

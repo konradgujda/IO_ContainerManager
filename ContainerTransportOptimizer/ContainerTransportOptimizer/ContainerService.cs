@@ -12,7 +12,10 @@ namespace ContainerTransportOptimizer
         private const int minSize = 1;
         private string fileName = "containerSet.txt";
         private int constHeight, idCounter;
-
+        /// <summary>
+        /// Generating sets of containers.
+        /// </summary>
+        /// <param name="numberOfContainersInEachSet">List defining how many containers will be in each set. Length of this list defines the number of sets. For each set, different timestamp is being set.</param>
         public void GenerateContainerSets(List<int> numberOfContainersInEachSet)
         {
             var i = 0;
@@ -23,7 +26,12 @@ namespace ContainerTransportOptimizer
                 isFirstSet = false;
             }
         }
-
+        /// <summary>
+        /// Generating single container set and saving it to file.
+        /// </summary>
+        /// <param name="numberOfContainers">How many containers will be in this set.</param>
+        /// <param name="timestamp">Timestamp of all the containers in this set.</param>
+        /// <param name="isFirstSet">Determines if the file will be written or appended.</param>
         private void GenerateContainerSet(int numberOfContainers, int timestamp, bool isFirstSet)
         {
             Random rnd = new Random();
@@ -47,7 +55,11 @@ namespace ContainerTransportOptimizer
             if(isFirstSet) System.IO.File.WriteAllLines(fileName, lines);
             else System.IO.File.AppendAllLines(fileName,lines);
         }
-
+        /// <summary>
+        /// Reads container data from file. Read data is raw here.
+        /// </summary>
+        /// <param name="fileName">Path to the file.</param>
+        /// <returns>List of raw data strings for each container.</returns>
         private List<string> ReadContainersData(string fileName)
         {
             string[] rawReadings = System.IO.File.ReadAllLines(fileName);
@@ -56,7 +68,10 @@ namespace ContainerTransportOptimizer
 
             return data;
         }
-
+        /// <summary>
+        /// Converting raw data from file to List of Container objects.
+        /// </summary>
+        /// <returns>List of containers from file.</returns>
         public List<Container> GetContainersList()
         {
             List<Container> containersList = new List<Container>();
@@ -74,7 +89,11 @@ namespace ContainerTransportOptimizer
             }
             return containersList;
         }
-
+        /// <summary>
+        /// Gets the particular container by it's ID.
+        /// </summary>
+        /// <param name="id">Container's ID.</param>
+        /// <returns>Container</returns>
         public Container GetContainerById(int id)
         {
             List<Container> containersList = GetContainersList();

@@ -12,11 +12,18 @@ namespace ContainerTransportOptimizer
 {
     public partial class MainWindow : Form
     {
+        /// <summary>
+        /// Initializing the form window.
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Generates containers and ships sets of data after clicking the button.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             var containerService = new ContainerService();
@@ -28,7 +35,14 @@ namespace ContainerTransportOptimizer
             InitializeComponent();
             MessageBox.Show("Data generated succesfully", "Save", MessageBoxButtons.OK);
         }
-
+        /// <summary>
+        /// After clicking the button:
+        /// - Fetches the data from files
+        /// - Optimizes of puts containers on ship creating shipments
+        /// - Draws a visual shipments report
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
             Graphics loadingGraphic = CreateGraphics();
@@ -89,12 +103,20 @@ namespace ContainerTransportOptimizer
             comboBox2.SelectedIndexChanged += (senderCombo2, eCombo2) => comboBox2_SelectedIndexChanged(senderCombo2, eCombo2, shipmentsList, comboBox1, out shipment);
             DisposeLoading(loadingGraphic);
         }
-
+        /// <summary>
+        /// Exits the application.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button3_Click(object sender, EventArgs e)
         {
             (sender as Button).Parent.Dispose();
         }
-
+        /// <summary>
+        /// Adds new ship and refreshes the form view.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button4_Click(object sender, EventArgs e)
         {
             var shipService = new ShipService();
@@ -104,12 +126,24 @@ namespace ContainerTransportOptimizer
             MessageBox.Show("Ship added succesfully", "ShipAdd", MessageBoxButtons.OK);
             //button2_Click(sender, e);
         }
-
+        /// <summary>
+        /// Refreshes the level visual representation after changing level combobox selection.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <param name="shipment"></param>
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e, Shipment shipment)
         {
             DrawShipmentLevel(shipment, (sender as ComboBox).SelectedIndex);
         }
-
+        /// <summary>
+        /// Refreshes the shipment visual representation after changing shipment combobox selection.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <param name="shipmentsList"></param>
+        /// <param name="combobox"></param>
+        /// <param name="shipment"></param>
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e, List<Shipment> shipmentsList, ComboBox combobox, out Shipment shipment)
         {
             shipment = shipmentsList[(sender as ComboBox).SelectedIndex];
@@ -121,7 +155,11 @@ namespace ContainerTransportOptimizer
             if (combobox.SelectedIndex == 0) DrawShipmentLevel(shipment, combobox.SelectedIndex);
             else combobox.SelectedIndex = 0;
         }
-
+        /// <summary>
+        /// Draws the visual representation of containers for particular shipment and level.
+        /// </summary>
+        /// <param name="shipment"></param>
+        /// <param name="level"></param>
         private void DrawShipmentLevel(Shipment shipment, int level)
         {
             Refresh();
@@ -176,7 +214,13 @@ namespace ContainerTransportOptimizer
 
             formGraphics.Dispose();
         }
-
+        /// <summary>
+        /// Determines which ship will be the best choice to send containers in.
+        /// </summary>
+        /// <param name="containersList"></param>
+        /// <param name="algorithm"></param>
+        /// <param name="shipment"></param>
+        /// <returns>List of containers the haven't been sent yet.</returns>
         private List<Container> ChooseTheShipAndSendIt(List<Container> containersList, int algorithm, out Shipment shipment)
         {
             var containerHeight = containersList.First().height;
@@ -200,7 +244,10 @@ namespace ContainerTransportOptimizer
 
             return containersLeft;
         }
-
+        /// <summary>
+        /// Shows loading dialog.
+        /// </summary>
+        /// <param name="loadingGraphic"></param>
         private void ShowLoading(Graphics loadingGraphic)
         {
             StringFormat format = new StringFormat();
@@ -214,7 +261,10 @@ namespace ContainerTransportOptimizer
             loadingGraphic.DrawRectangle(new Pen(Color.Black), rect1);
             loadingGraphic.DrawString("LOADING...", new Font("Arial", 20, FontStyle.Bold, GraphicsUnit.Point), Brushes.Black, rect1, format);
         }
-
+        /// <summary>
+        /// Hides loading dialog.
+        /// </summary>
+        /// <param name="loadingGraphic"></param>
         private void DisposeLoading(Graphics loadingGraphic)
         {
             loadingGraphic.Dispose();

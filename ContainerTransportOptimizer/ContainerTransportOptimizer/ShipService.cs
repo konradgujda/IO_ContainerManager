@@ -12,7 +12,9 @@ namespace ContainerTransportOptimizer
         private const int maxSize = 100;
         private const int minSize = 50;
         private string fileName = "shipSet.txt";
-
+        /// <summary>
+        /// Generated random set of ships and saves them to file.
+        /// </summary>
         public void GenerateShipSet()
         {
             var numberOfShips = 3;
@@ -33,12 +35,18 @@ namespace ContainerTransportOptimizer
             }
             SaveShipsToFile(lines);
         }
-
+        /// <summary>
+        /// Saves ships to file.
+        /// </summary>
+        /// <param name="lines">Prepared strings to be saved.</param>
         private void SaveShipsToFile(List<string> lines)
         {
             System.IO.File.WriteAllLines(fileName, lines);
         }
-
+        /// <summary>
+        /// Read raw ship data from file.
+        /// </summary>
+        /// <returns>Raw string data.</returns>
         private List<string> ReadShipsData()
         {
             string[] rawReadings = System.IO.File.ReadAllLines(fileName);
@@ -50,7 +58,10 @@ namespace ContainerTransportOptimizer
 
             return data;
         }
-
+        /// <summary>
+        /// Converts raw string ships data to List of Ship objects.
+        /// </summary>
+        /// <returns>Ships list.</returns>
         public List<Ship> GetShipsList()
         {
             List<Ship> shipsList = new List<Ship>();
@@ -68,13 +79,19 @@ namespace ContainerTransportOptimizer
             }
             return shipsList;
         }
-
+        /// <summary>
+        /// Finds the ship with particular ID.
+        /// </summary>
+        /// <param name="id">ID of the ship.</param>
+        /// <returns>Ship.</returns>
         public Ship GetShipById(int id)
         {
             List<Ship> shipsList = GetShipsList();
             return shipsList.Find(x => x.id == id);
         }
-
+        /// <summary>
+        /// Replaces oldest ship with new one, randomly generated, and saves it to file.
+        /// </summary>
         public void AddNewShip()
         {
             var shipsList = GetShipsList();
