@@ -1,4 +1,4 @@
-Wersja polska - jak mi się będzie chciało to przetłumaczę na angielski, bo brzmi bardziej profesjonalnie :D
+Wersja polska
 # Cel projektu
 Stworzyć oprogramowanie dla firmy zajmującej się dyspozycją kontenerów i wysyłką ich za pomocą statków. Program ma na podstawie przygotowanych danych zwracać informację, jakie jest najbardziej optymalne ułożenie kontenerów na poszczególnych statkach i planować wysyłkę kontenerów.
 # Działanie programu
